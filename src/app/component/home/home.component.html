@@ -1,0 +1,30 @@
+
+<br>
+<h4 class="text-center">USER LIST</h4>
+<div class="text-right" style="width: 92%;">
+  <button type="button" class="btn btn-success" (click)="goToCreateUser()">CREATE NEW USER</button>
+</div>
+<br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th  scope="col">EMAIL</th>
+        <th  class="text-center" scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list">
+        <td scope="row">{{item.id}}</td>
+        <td>{{item.first_name}}</td>
+        <td>{{item.last_name}}</td>
+        <td>{{item.email}}</td>
+        <td class="text-center">
+          <img src="assets/icon/edit.png" (click)="editUser(item.id)">&nbsp;
+          <img src="assets/icon/delete.png" (click)="delete(item.id)">
+        </td>
+      </tr>
+    </tbody>
+  </table>

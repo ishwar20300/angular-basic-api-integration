@@ -1,0 +1,36 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div  class="col-6"> 
+                <div class="card">
+                    <form #appForm="ngForm" (ngSubmit)="appForm.form.valid && submit()">
+                        <h3 class="text-center">Add New User </h3>
+                        <div class="form-group">
+                          <label>Name<span class="astric">*</span></label>
+                          <input type="email" class="form-control" [(ngModel)]="formData.name" name="name" #name="ngModel"  required>
+                          <span class="text-danger" *ngIf="(name.touched || appForm.submitted) && name.errors?.required">
+                            Name is required
+                        </span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Job<span class="astric">*</span></label>
+                            <input type="email" class="form-control" [(ngModel)]="formData.job" name="job" #job="ngModel"  required>
+                            <span class="text-danger" *ngIf="(job.touched || appForm.submitted) && job.errors?.required">
+                                Job is required
+                          </span>
+                        </div>
+             
+                        <br>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+</section>
